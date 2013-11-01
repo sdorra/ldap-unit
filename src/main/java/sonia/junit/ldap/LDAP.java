@@ -24,7 +24,7 @@
 
 
 
-package sonia.ldapunit;
+package sonia.junit.ldap;
 
 //~--- JDK imports ------------------------------------------------------------
 
