@@ -72,6 +72,7 @@ public class LDAPUnit implements MethodRule
    *
    * @return
    */
+  @Override
   public Statement apply(final Statement statement, FrameworkMethod method,
     Object target)
   {
