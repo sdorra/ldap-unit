@@ -56,6 +56,8 @@ import javax.net.ServerSocketFactory;
 import javax.net.SocketFactory;
 
 /**
+ * The ldap unit starts a in memory directory server for each method
+ * which is annotated with the {@link LDAPUnit} annotation.
  *
  * @author Sebastian Sdorra
  */
@@ -63,14 +65,7 @@ public class LDAPUnit implements MethodRule
 {
 
   /**
-   * Method description
-   *
-   *
-   * @param statement
-   * @param method
-   * @param target
-   *
-   * @return
+   * {@inheritDoc}
    */
   @Override
   public Statement apply(final Statement statement, FrameworkMethod method,
@@ -119,10 +114,10 @@ public class LDAPUnit implements MethodRule
   }
 
   /**
-   * Method description
+   * Creates a new {@link LdapContext} for the in memory directory server.
    *
    *
-   * @return
+   * @return {@link LdapContext} for in memory directory server
    *
    * @throws NamingException
    */
@@ -134,43 +129,10 @@ public class LDAPUnit implements MethodRule
   //~--- get methods ----------------------------------------------------------
 
   /**
-   * Method description
+   * Returns unboundid connection for the in memory directory server.
    *
    *
-   * @return
-   */
-  public String getAdditionalBindDN()
-  {
-    return additionalBindDN;
-  }
-
-  /**
-   * Method description
-   *
-   *
-   * @return
-   */
-  public String getAdditionalBindPassword()
-  {
-    return additionalBindPassword;
-  }
-
-  /**
-   * Method description
-   *
-   *
-   * @return
-   */
-  public String getBaseDN()
-  {
-    return baseDN;
-  }
-
-  /**
-   * Method description
-   *
-   *
-   * @return
+   * @return connection for in memory directory server
    *
    * @throws LDAPException
    */
@@ -180,10 +142,10 @@ public class LDAPUnit implements MethodRule
   }
 
   /**
-   * Method description
+   * Returns jndi properties for the in memory directory server.
    *
    *
-   * @return
+   * @return jndi properties
    */
   @SuppressWarnings("UseOfObsoleteCollectionType")
   public Hashtable<String, String> getConnectionProperties()
@@ -202,28 +164,6 @@ public class LDAPUnit implements MethodRule
     props.put(LdapContext.SECURITY_CREDENTIALS, additionalBindPassword);
 
     return props;
-  }
-
-  /**
-   * Method description
-   *
-   *
-   * @return
-   */
-  public InMemoryDirectoryServer getDirectoryServer()
-  {
-    return directoryServer;
-  }
-
-  /**
-   * Method description
-   *
-   *
-   * @return
-   */
-  public int getPort()
-  {
-    return port;
   }
 
   //~--- methods --------------------------------------------------------------

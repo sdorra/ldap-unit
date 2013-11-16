@@ -32,8 +32,12 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
+import org.junit.Rule;
 
 /**
+ * The LDAP annotation starts a in memory directory server and loads the 
+ * specified ldif file. The LDAP annotations requires the junit {@link Rule} 
+ * {@link LDAPUnit}.
  *
  * @author Sebastian Sdorra
  */
@@ -41,9 +45,39 @@ import java.lang.annotation.Target;
 @Target({ ElementType.METHOD })
 public @interface LDAP
 {
+  /**
+   * The port on which the directory server should accept 
+   * connections from clients.
+   * 
+   * @return port for the directory server
+   */
   int port() default 10389;
+  
+  /**
+   * Base dn for the directory server.
+   * 
+   * @return base dn for the directory server
+   */
   String baseDN() default "dc=example,dc=com";
+  
+  /**
+   * Path to a ldif file in the classpath. This ldif file is loaded on startup.
+   * 
+   * @return path to ldif file
+   */
   String ldif();
+  
+  /**
+   * Bind dn for the directory server.
+   * 
+   * @return bind dn
+   */
   String additionalBindDN() default "cn=Directory Manager";
+  
+  /**
+   * Password for bind dn.
+   * 
+   * @return password for bind dn
+   */
   String additionalBindPassword() default "secretPwd";
 }
