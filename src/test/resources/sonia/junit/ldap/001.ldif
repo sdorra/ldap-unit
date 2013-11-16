@@ -1,0 +1,40 @@
+version: 1
+
+dn: dc=example,dc=com
+objectClass: domain
+objectClass: top
+dc: example
+
+dn: o=hitchhiker.com,dc=example,dc=com
+objectClass: organization
+objectClass: top
+o: hitchhiker.com
+
+dn: ou=People,o=hitchhiker.com,dc=example,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: People
+
+dn: uid=dent,ou=People,o=hitchhiker.com,dc=example,dc=com
+objectClass: soniaPerson
+objectClass: inetOrgPerson
+objectClass: person
+objectClass: top
+uid: dent
+givenName: Arthur
+sn: Dent
+cn: Arthur Dent
+mail: arthur.dent@hitchhiker.com
+mailAlternateAddress: dent@hitchhiker.com
+
+dn: uid=tricia,ou=People,o=hitchhiker.com,dc=example,dc=com
+objectClass: soniaPerson
+objectClass: inetOrgPerson
+objectClass: person
+objectClass: top
+uid: tricia
+givenName: Tricia
+sn: McMillan
+cn: Tricia McMillan
+mail: tricia.mcmillan@hitchhiker.com
+mailAlternateAddress: tricia@hitchhiker.com

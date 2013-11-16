@@ -285,6 +285,10 @@ public class LDAPUnit implements MethodRule
 
         directoryServer.importFromLDIF(true, reader);
       }
+      else
+      {
+        throw new RuntimeException("could not find ldif ".concat(ldif));
+      }
     }
   }
 
