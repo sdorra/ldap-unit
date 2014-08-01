@@ -28,4 +28,4 @@
  * 
  * @author Sebastian Sdorra
  */
-package sonia.junit.ldap;
+package com.github.sdorra.ldap;

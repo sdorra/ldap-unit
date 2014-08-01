@@ -24,7 +24,7 @@
 
 
 
-package sonia.junit.ldap;
+package com.github.sdorra.ldap;
 
 //~--- JDK imports ------------------------------------------------------------
 

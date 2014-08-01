@@ -24,9 +24,10 @@
 
 
 
-package sonia.junit.ldap;
+package com.github.sdorra.ldap;
 
 //~--- non-JDK imports --------------------------------------------------------
+
 
 import com.unboundid.ldap.sdk.Entry;
 import com.unboundid.ldap.sdk.LDAPException;
@@ -50,14 +51,14 @@ import javax.naming.ldap.LdapContext;
  *
  * @author Sebastian Sdorra
  */
-public class LDAPUnitTest
+public class LDAPRuleTest
 {
 
   /**
    * Constructs ...
    *
    */
-  public LDAPUnitTest() {}
+  public LDAPRuleTest() {}
 
   //~--- methods --------------------------------------------------------------
 
@@ -68,7 +69,7 @@ public class LDAPUnitTest
    * @throws NamingException
    */
   @Test
-  @LDAP(ldif = "/sonia/junit/ldap/001.ldif")
+  @LDAP(ldif = "/com/github/sdorra/ldap/001.ldif")
   public void testCreateLdapContext() throws NamingException
   {
     LdapContext context = null;
@@ -102,7 +103,7 @@ public class LDAPUnitTest
    * @throws LDAPException
    */
   @Test
-  @LDAP(ldif = "/sonia/junit/ldap/001.ldif")
+  @LDAP(ldif = "/com/github/sdorra/ldap/001.ldif")
   public void testGetConnection() throws LDAPException
   {
     LDAPInterface connection = ldapUnit.getConnection();
@@ -123,7 +124,7 @@ public class LDAPUnitTest
    */
   @Test
   @SuppressWarnings("UseOfObsoleteCollectionType")
-  @LDAP(ldif = "/sonia/junit/ldap/001.ldif", additionalBindDN = "uid=slarti")
+  @LDAP(ldif = "/com/github/sdorra/ldap/001.ldif", additionalBindDN = "uid=slarti")
   public void testGetConnectionProperties()
   {
     Hashtable<String, String> env = ldapUnit.getConnectionProperties();
@@ -136,5 +137,5 @@ public class LDAPUnitTest
 
   /** Field description */
   @Rule
-  public LDAPUnit ldapUnit = new LDAPUnit();
+  public LDAPRule ldapUnit = new LDAPRule();
 }

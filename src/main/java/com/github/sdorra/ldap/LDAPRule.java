@@ -24,7 +24,7 @@
 
 
 
-package sonia.junit.ldap;
+package com.github.sdorra.ldap;
 
 //~--- non-JDK imports --------------------------------------------------------
 
@@ -57,11 +57,11 @@ import javax.net.SocketFactory;
 
 /**
  * The ldap unit starts a in memory directory server for each method
- * which is annotated with the {@link LDAPUnit} annotation.
+ * which is annotated with the {@link LDAPRule} annotation.
  *
  * @author Sebastian Sdorra
  */
-public class LDAPUnit implements MethodRule
+public class LDAPRule implements MethodRule
 {
 
   /**
