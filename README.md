@@ -25,6 +25,6 @@ Artifacts are deployed to [Maven Central](http://search.maven.org). To use, drop
 <dependency>
     <groupId>com.github.sdorra</groupId>
     <artifactId>ldap-unit</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
 </dependency>
 ```
