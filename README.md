@@ -21,7 +21,7 @@ public class LDAPUnitTest {
 ### Maven usage 
 
 Artifacts are deployed to [Maven Central](http://search.maven.org). To use, drop this in your pom.xml: 
-```
+```xml
 <dependency>
     <groupId>com.github.sdorra</groupId>
     <artifactId>ldap-unit</artifactId>
