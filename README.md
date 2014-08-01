@@ -11,11 +11,11 @@ public class LDAPUnitTest {
   @Test
   @LDAP(ldif = "/path/to/file.ldif")
   public void testLdapMethod(){
-    LdapContext context = ldapUnit.createLdapContext();
+    LdapContext context = rule.createLdapContext();
   }
 
   @Rule
-  public LDAPUnit ldapUnit = new LDAPUnit();
+  public LDAPRule rule = new LDAPRule();
 }
 ```
 ### Maven usage 
